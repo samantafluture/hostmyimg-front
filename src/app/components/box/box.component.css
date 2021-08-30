@@ -1,0 +1,15 @@
+.box__wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box__content {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+}

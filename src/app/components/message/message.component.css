@@ -1,0 +1,15 @@
+.message {
+  color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.message--success {
+  color: #78e5d5;
+}
+
+.message--error {
+  color: #e57878;
+}
