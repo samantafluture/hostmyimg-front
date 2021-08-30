@@ -1,0 +1,11 @@
+.file-list {
+  margin-top: 20px;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #444;
+  margin-top: 15px;
+}

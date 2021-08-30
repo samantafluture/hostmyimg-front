@@ -75,9 +75,9 @@ Refatorar:
 ```
 
 Adicionar:
+
 - [ ] Alterar cor da borda conforme tipo de arquivo
 - [ ] Deixar input estilizado
-
 
 ### `<app-message>`
 
@@ -100,6 +100,56 @@ Adicionar:
 ```
 
 Adicionar:
+
 - [ ] Alterar mensagem conforme sucesso ou erro
 
 ### `<app-file-list>`
+
+- lista de arquivos estilizada
+- dará o preview e o status dos arquivos de upload
+
+```css
+ul {
+	 margin-top: 20px;
+}
+ ul li {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 color: #444;
+}
+ ul li + li {
+	 margin-top: 15px;
+}
+ 
+div {
+	 display: flex;
+	 align-items: center;
+}
+ div div {
+	 display: flex;
+	 flex-direction: column;
+}
+ div div span {
+	 font-size: 12px;
+	 color: #999;
+	 margin-top: 5px;
+}
+ div div span button {
+	 border: 0;
+	 background: transparent;
+	 color: #e57878;
+	 margin-left: 5px;
+	 cursor: pointer;
+}
+ 
+.preview {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-right: 10px;
+}
+```

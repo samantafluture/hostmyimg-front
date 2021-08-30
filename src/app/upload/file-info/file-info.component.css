@@ -1,0 +1,23 @@
+.file-info__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.file-info__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.btn-delete {
+  border: 0;
+  background: transparent;
+  color: #e57878;
+  margin-left: 5px;
+  cursor: pointer;
+}
