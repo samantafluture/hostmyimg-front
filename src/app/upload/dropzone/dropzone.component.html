@@ -1,7 +1,20 @@
 <app-box>
   <div class="dropzone">
-    <app-message message="Arraste os arquivos aqui..."></app-message>
-    <input type="file" hidden />
+    <app-message message="Drop your images here or..."></app-message>
+    <div class="browse">
+      <input
+        hidden
+        type="file"
+        #fileRefDrop
+        id="fileRefDrop"
+        multiple
+        (change)="fileBrowseHandler($event.target)"
+      />
+      <div class="browse__btn">
+        <mat-icon>folder</mat-icon>
+        <label for="fileRefDrop">Browse</label>
+      </div>
+    </div>
   </div>
   <app-file-list></app-file-list>
 </app-box>
