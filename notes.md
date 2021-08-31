@@ -153,3 +153,10 @@ div {
   margin-right: 10px;
 }
 ```
+
+### ícones
+
+- barra de progresso circular
+- ícone de link
+- check circle
+- error circle

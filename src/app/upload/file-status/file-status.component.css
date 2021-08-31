@@ -1,0 +1,17 @@
+a {
+  color: #222;
+  margin-right: 8px;
+}
+
+mat-icon {
+  size: 24px;
+  padding: 5px;
+}
+
+.icon-success {
+  color: #78e5d5;
+}
+
+.icon-error {
+  color: #e57878;
+}
