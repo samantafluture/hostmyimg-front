@@ -1,0 +1,14 @@
+<div class="browse">
+  <input
+    hidden
+    type="file"
+    #fileRefDrop
+    id="fileRefDrop"
+    multiple
+    (change)="fileBrowseHandler($event.target)"
+  />
+  <div class="browse__btn">
+    <mat-icon>folder</mat-icon>
+    <label for="fileRefDrop">Browse</label>
+  </div>
+</div>

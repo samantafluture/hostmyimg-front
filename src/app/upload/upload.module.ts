@@ -10,6 +10,7 @@ import { FileListComponent } from './file-list/file-list.component';
 import { FileInfoComponent } from './file-info/file-info.component';
 import { FilePreviewComponent } from './file-preview/file-preview.component';
 import { FileStatusComponent } from './file-status/file-status.component';
+import { BrowseInputComponent } from './browse-input/browse-input.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FileStatusComponent } from './file-status/file-status.component';
     FileInfoComponent,
     FilePreviewComponent,
     FileStatusComponent,
+    BrowseInputComponent,
   ],
   imports: [CommonModule, UploadRoutingModule, SharedModule],
   exports: [
@@ -25,6 +27,7 @@ import { FileStatusComponent } from './file-status/file-status.component';
     FileListComponent,
     FileInfoComponent,
     FilePreviewComponent,
+    BrowseInputComponent
   ],
 })
 export class UploadModule {}

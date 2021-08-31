@@ -6,10 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DropzoneDirective } from './directives/dropzone.directive'; 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DropzoneDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,

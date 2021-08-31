@@ -12,8 +12,4 @@ export class DropzoneComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  fileBrowseHandler($event: any) {
-
-  }
-
 }

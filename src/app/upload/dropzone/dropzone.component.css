@@ -13,29 +13,3 @@
 .dropzone--reject {
   border-color: #e57878;
 }
-
-.browse {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.browse__btn {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  color: #999;
-  text-align: center;
-  vertical-align: middle;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 5px 10px;
-}
-
-label {
-  margin-left: 5px;
-  cursor: pointer;
-}
-
