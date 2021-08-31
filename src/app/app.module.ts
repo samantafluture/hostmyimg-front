@@ -1,22 +1,22 @@
 import { SharedModule } from './shared/shared.module';
 import { UploadModule } from './upload/upload.module';
-import { BoxModule } from './components/box/box.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DropzoneDirective } from './directives/dropzone.directive'; 
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
-  declarations: [AppComponent, DropzoneDirective],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UploadModule,
     BrowserAnimationsModule,
     SharedModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent],

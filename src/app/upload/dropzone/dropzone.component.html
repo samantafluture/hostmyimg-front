@@ -1,7 +1,9 @@
 <app-box>
-  <div class="dropzone" appDropzone>
-    <app-message message="Drop your images here or..."></app-message>
-    <app-browse-input></app-browse-input>
-  </div>
+  <ngx-dropzone (change)="onSelect($event)" class="dropzone">
+    <ngx-dropzone-label>
+      <p>Drop your images here or...</p>
+      <app-browse-input></app-browse-input>
+    </ngx-dropzone-label>
+  </ngx-dropzone>
   <app-file-list></app-file-list>
 </app-box>
