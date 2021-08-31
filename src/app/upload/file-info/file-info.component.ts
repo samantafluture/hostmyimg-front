@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FileInfoComponent implements OnInit {
   file = {
-    name: 'arquivo-teste.jpg',
+    name: 'test-file.jpg',
     size: '100k',
   };
 
