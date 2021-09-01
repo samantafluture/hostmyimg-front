@@ -19,14 +19,18 @@ body,
 
 ngx-dropzone-image-preview {
   margin: 0 !important;
+  min-height: 60px !important;
+  height: 60px !important;
 }
+
 img {
   width: 40px;
   height: 40px;
   margin: 0;
-  /* border-radius: 5px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  margin-right: 10px; */
+}
+
+ngx-dropzone-remove-badge {
+  top: 18px !important;
+  right: 10px !important;
+  position: absolute !important;
 }

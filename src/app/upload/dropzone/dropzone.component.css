@@ -47,5 +47,25 @@
 
 ngx-dropzone-image-preview {
   margin: 0 !important;
+  min-height: 60px !important;
+  height: 60px !important;
 }
 
+ngx-dropzone-remove-badge {
+  top: 18px !important;
+  right: 10px !important;
+  position: absolute !important;
+}
+
+.status {
+  display: flex;
+  align-items: baseline;
+}
+
+.btn-delete {
+  border: 0;
+  background: transparent;
+  color: #e57878;
+  margin-left: 5px;
+  cursor: pointer;
+}
