@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { NgxFilesizeModule } from 'ngx-filesize';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     UploadModule,
     BrowserAnimationsModule,
     SharedModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    NgxFilesizeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

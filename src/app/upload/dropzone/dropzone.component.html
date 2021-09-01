@@ -5,5 +5,28 @@
       <app-browse-input></app-browse-input>
     </ngx-dropzone-label>
   </ngx-dropzone>
-  <app-file-list></app-file-list>
+  <div class="container" *ngFor="let f of files">
+    <div class="container">
+      <ngx-dropzone-image-preview
+        ngProjectAs="ngx-dropzone-preview"
+        [file]="f"
+        [removable]="true"
+        (removed)="onRemove(f)"
+      >
+      </ngx-dropzone-image-preview>
+      <ngx-dropzone-label>
+        <div class="file-info__wrapper">
+          <div class="file-info__content">
+            <strong>{{ f.name | slice: 0:30 }}</strong>
+            <span class="file-size">
+              {{ f.size | filesize }}
+              {{ f.type }}
+            </span>
+          </div>
+        </div>
+      </ngx-dropzone-label>
+    </div>
+
+    <app-file-status></app-file-status>
+  </div>
 </app-box>

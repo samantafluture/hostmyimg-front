@@ -17,5 +17,16 @@ body,
   height: 100%;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ngx-dropzone-image-preview {
+  margin: 0 !important;
+}
+img {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  /* border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-right: 10px; */
+}

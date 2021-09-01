@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dropzone.component.css'],
 })
 export class DropzoneComponent implements OnInit {
+  files: File[] = [];
+
   constructor() {}
 
   ngOnInit(): void {}
-
-  files: File[] = [];
 
   onSelect(event: any) {
     console.log(event);

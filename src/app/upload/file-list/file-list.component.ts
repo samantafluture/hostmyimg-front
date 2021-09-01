@@ -6,7 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./file-list.component.css'],
 })
 export class FileListComponent implements OnInit {
+  files: File[] = [];
+
   constructor() {}
 
   ngOnInit(): void {}
+
 }

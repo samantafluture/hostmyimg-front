@@ -11,6 +11,7 @@ import { FilePreviewComponent } from './file-preview/file-preview.component';
 import { FileStatusComponent } from './file-status/file-status.component';
 import { BrowseInputComponent } from './browse-input/browse-input.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { NgxFilesizeModule } from 'ngx-filesize';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     FileStatusComponent,
     BrowseInputComponent,
   ],
-  imports: [CommonModule, UploadRoutingModule, SharedModule, NgxDropzoneModule],
+  imports: [CommonModule, UploadRoutingModule, SharedModule, NgxDropzoneModule, NgxFilesizeModule],
   exports: [
     DropzoneComponent,
     FileListComponent,
