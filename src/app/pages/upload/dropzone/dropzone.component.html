@@ -7,10 +7,7 @@
   </ngx-dropzone>
   <div class="container" *ngFor="let f of files">
     <div class="container">
-      <ngx-dropzone-image-preview
-        ngProjectAs="ngx-dropzone-preview"
-        [file]="f"
-      >
+      <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f">
       </ngx-dropzone-image-preview>
       <ngx-dropzone-label>
         <div class="file-info__wrapper">

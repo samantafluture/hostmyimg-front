@@ -1,5 +1,6 @@
+import { ImageUploaderModule } from './pages/image-uploader/image-uploader.module';
 import { SharedModule } from './shared/shared.module';
-import { UploadModule } from './upload/upload.module';
+import { UploadModule } from './pages/upload/upload.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { NgxFilesizeModule } from 'ngx-filesize';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +20,9 @@ import { NgxFilesizeModule } from 'ngx-filesize';
     BrowserAnimationsModule,
     SharedModule,
     NgxDropzoneModule,
-    NgxFilesizeModule
+    NgxFilesizeModule,
+    ImageUploaderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,4 @@
-import { SharedModule } from './../shared/shared.module';
-
+import { SharedModule } from './../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,6 +11,7 @@ import { FileStatusComponent } from './file-status/file-status.component';
 import { BrowseInputComponent } from './browse-input/browse-input.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { NgxFilesizeModule } from 'ngx-filesize';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,15 @@ import { NgxFilesizeModule } from 'ngx-filesize';
     FileStatusComponent,
     BrowseInputComponent,
   ],
-  imports: [CommonModule, UploadRoutingModule, SharedModule, NgxDropzoneModule, NgxFilesizeModule],
+  imports: [
+    CommonModule,
+    UploadRoutingModule,
+    NgxDropzoneModule,
+    NgxFilesizeModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   exports: [
     DropzoneComponent,
     FileListComponent,

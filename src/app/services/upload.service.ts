@@ -13,25 +13,22 @@ export class UploadService {
   constructor(private http: HttpClient) {}
 
   getAllFiles(): Observable<Uploads> {
-    return this.http.get<Uploads>(`${API}/posts/free`);
+    return this.http.get<Uploads>(`${API}/posts/`);
   }
 
   getFileById(_id: string): Observable<Upload> {
-    return this.http.get<Upload>(`${API}/posts/free/${_id}`);
+    return this.http.get<Upload>(`${API}/posts/${_id}`);
   }
 
   deleteFile(_id: string): Observable<Upload> {
-    return this.http.delete<Upload>(`${API}/posts/free/${_id}`);
+    return this.http.delete<Upload>(`${API}/posts/${_id}`);
   }
 
-  uploadFile(name: string, size: any, url: string, file: File) {
+  uploadFile(file: File) {
     const formData = new FormData();
-    formData.append('name', name);
-    formData.append('size', size.toString());
-    formData.append('url', url);
-    formData.append('file', file);
+    formData.append('file', file, file.name);
 
-    return this.http.post(`${API}/posts/free`, formData, {
+    return this.http.post(`${API}/posts/`, formData, {
       observe: 'events',
       reportProgress: true,
     });
