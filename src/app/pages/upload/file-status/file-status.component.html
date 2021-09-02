@@ -1,5 +1,17 @@
 <div class="file-status">
-  <a href=""><mat-icon>link</mat-icon></a>
-  <mat-icon class="icon-success">check_circle</mat-icon>
-  <!-- <mat-icon class="icon-error">error</mat-icon> -->
+  <a [href]="url"><mat-icon>link</mat-icon></a>
+  <div class="file-status__icons">
+    <div *ngIf="value > 0 || value < 50; else result">
+      <mat-spinner
+        diameter="24"
+        [value]="progress"
+        strokeWidth="3"
+        mode="determinate"
+      ></mat-spinner>
+    </div>
+    <ng-template #result>
+      <mat-icon class="icon-success">check_circle</mat-icon>
+      <!-- <mat-icon class="icon-error">error</mat-icon> -->
+    </ng-template>
+  </div>
 </div>

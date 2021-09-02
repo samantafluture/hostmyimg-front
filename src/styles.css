@@ -29,6 +29,10 @@ img {
   margin: 0;
 }
 
+mat-spinner svg circle {
+  stroke: #4e3d86 !important;
+}
+
 /* ngx-dropzone-remove-badge {
   top: 18px !important;
   right: 10px !important;

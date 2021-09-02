@@ -18,30 +18,22 @@
 
 ---
 
-01/Setembro/2021
+02/Setembro/2021
 
 1. Serviço de upload / api
--> gravar na api o arquivo
--> pegar o link salvo cdn e mostrar
--> usar infos do progresso na barra de progresso
+- [x] gravar na api o arquivo
+- [ ] usar infos do progresso na barra de progresso
+- [ ] pegar o link salvo cdn e mostrar
 
 2. Validações visuais
-3. Refatoração de estilos e componentes
+- [ ] tamanho de arquivo
+- [ ] tipo de arquivo
+- [ ] mais de 10 arquivos ao mesmo temp
 
-## Image Uploader
+3. Refatoração da API
+- [ ] subir a api sem token no ar
 
-<app-form>
-  <app-dropzone />
-  <app-browse />
-</app-form>
-<app-files>
-  <app-preview />
-  <app-status />
-</app-files>
+4. Refatoração de estilos e componentes
+- [ ] tirar o botão?
 
-- drop or browse image
-- preview image
-- upload image
-- remove image
-- get link image
 

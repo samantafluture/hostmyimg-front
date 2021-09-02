@@ -1,16 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-file-status',
   templateUrl: './file-status.component.html',
-  styleUrls: ['./file-status.component.css']
+  styleUrls: ['./file-status.component.css'],
 })
 export class FileStatusComponent implements OnInit {
+  @Input()
+  diameter!: number;
 
+  @Input()
+  mode!: string;
 
-  constructor() { }
+  @Input()
+  value!: number;
 
-  ngOnInit(): void {
-  }
+  @Input()
+  progress!: number;
 
+  @Input()
+  strokeWidth!: number;
+
+  @Input()
+  url!: string;
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  
 }

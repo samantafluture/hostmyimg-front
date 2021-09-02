@@ -22,8 +22,10 @@
         </div>
       </ngx-dropzone-label>
     </div>
-    <div class="status">
-      <app-file-status></app-file-status>
+    <div class="status" >
+      <app-file-status
+        [progress] =  "uploadProgress"
+      ></app-file-status>
     </div>
   </div>
 </app-box>
