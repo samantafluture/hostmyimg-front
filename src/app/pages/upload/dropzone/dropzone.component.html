@@ -1,15 +1,23 @@
-<app-box>
+<app-box title="Image Uploader">
+
   <ngx-dropzone
-    accept="image/*"
+    accept="image/jpeg,image/jpg,image/png,image/gif"
     (change)="onSelect($event)"
     class="dropzone"
-    [maxFileSize]="2000000"
+    [maxFileSize]="1"
   >
+
     <ngx-dropzone-label>
-      <h4><u>Click</u> or Drop your images here</h4>
-      <app-message message="Accepted files: png, jpeg, jpg, gif"></app-message>
+      <p>Click or drag and drop images here</p>
+      <app-message
+        *ngIf="failed"
+        msg_1="Supported file types: PNG, JPG, GIF"
+        msg_2="Maximum file size: 2 MB"
+      ></app-message>
     </ngx-dropzone-label>
+
   </ngx-dropzone>
+
   <div class="container" *ngFor="let f of files">
     <div class="container">
       <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f">

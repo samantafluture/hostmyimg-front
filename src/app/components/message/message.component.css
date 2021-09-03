@@ -1,16 +1,5 @@
 .message {
-  color: #bbb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  padding-top: 5px;
-}
-
-.message--success {
-  color: #78e5d5;
-}
-
-.message--error {
+  font-size: 13px;
+  padding-top: 12px;
   color: #e57878;
 }

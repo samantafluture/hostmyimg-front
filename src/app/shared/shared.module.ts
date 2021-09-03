@@ -1,4 +1,4 @@
-import { MessageModule } from './../components/message/message.module';
+import { MessageModule } from '../components/message/message.module';
 import { BoxModule } from '../components/box/box.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
