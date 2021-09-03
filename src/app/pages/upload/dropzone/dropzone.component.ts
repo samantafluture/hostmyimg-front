@@ -14,6 +14,7 @@ export class DropzoneComponent implements OnInit {
   files: File[] = [];
   file!: File;
   failed!: boolean;
+  isFileLimit!: boolean;
   uploadProgress = 0;
   imageUrl = url;
 
@@ -23,7 +24,7 @@ export class DropzoneComponent implements OnInit {
 
   onSelect(event: any) {
     if (this.files.push(...event.addedFiles)) {
-      this.upload();
+      this.files.length < 6 ? this.upload() : this.isFileLimit = true;
     } else {
       this.files.push(...event.rejectedFiles);
       this.failed = true;

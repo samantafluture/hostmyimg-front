@@ -1,12 +1,10 @@
 <app-box title="Image Uploader">
-
   <ngx-dropzone
     accept="image/jpeg,image/jpg,image/png,image/gif"
     (change)="onSelect($event)"
     class="dropzone"
-    [maxFileSize]="1"
+    [maxFileSize]="2000000"
   >
-
     <ngx-dropzone-label>
       <p>Click or drag and drop images here</p>
       <app-message
@@ -14,49 +12,64 @@
         msg_1="Supported file types: PNG, JPG, GIF"
         msg_2="Maximum file size: 2 MB"
       ></app-message>
+      <app-message
+      *ngIf="isFileLimit"
+       msg_1="Please, upload no more then 5 images at time!"
+      ></app-message>
     </ngx-dropzone-label>
-
   </ngx-dropzone>
 
-  <div class="container" *ngFor="let f of files">
-    <div class="container">
-      <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f">
-      </ngx-dropzone-image-preview>
-      <ngx-dropzone-label>
-        <div class="file-info__wrapper">
-          <div class="file-info__content">
-            <strong>{{ f.name | slice: 0:20 }}</strong>
-            <span class="file-size">
-              {{ f.size | filesize }}
-              <button class="btn-delete" (click)="onRemove(f)">Remove</button>
-            </span>
+  <section *ngIf="!isFileLimit">
+    <div class="container" *ngFor="let f of files">
+      <div class="container">
+        <ngx-dropzone-image-preview
+          ngProjectAs="ngx-dropzone-preview"
+          [file]="f"
+        >
+        </ngx-dropzone-image-preview>
+
+        <ngx-dropzone-label>
+          <div class="file-info__wrapper">
+            <div class="file-info__content">
+              <strong>{{ f.name | slice: 0:20 }}</strong>
+              <span class="file-size">
+                {{ f.size | filesize }}
+                <button class="btn-delete" (click)="onRemove(f)">Remove</button>
+              </span>
+            </div>
           </div>
+        </ngx-dropzone-label>
+      </div>
+
+      <div class="status">
+        <div class="file-status">
+          <a href="{{ imageUrl }}/{{ f.name }}" target="_blank" *ngIf="!failed">
+            <mat-icon>link</mat-icon>
+          </a>
+
+          <div class="file-status__icons" *ngIf="uploadProgress; else error">
+            <mat-icon class="icon-success">check_circle</mat-icon>
+          </div>
+
+          <ng-template #error>
+            <mat-icon class="icon-error">error</mat-icon>
+          </ng-template>
         </div>
-      </ngx-dropzone-label>
+      </div>
     </div>
-    <div class="status">
-      <div class="file-status">
-        <a href="{{ imageUrl }}/{{ f.name }}" target="_blank"
-          ><mat-icon>link</mat-icon></a
-        >
-        <div
-          class="file-status__icons"
-          *ngIf="uploadProgress; else error || loading"
-        >
-          <mat-icon class="icon-success">check_circle</mat-icon>
-        </div>
-        <ng-template #error>
-          <mat-icon class="icon-error">error</mat-icon>
-        </ng-template>
-        <ng-template #loading>
+  </section>
+
+</app-box>
+
+
+
+
+
+<!-- <ng-template #loading>
           <mat-spinner
             diameter="24"
             [value]="uploadProgress"
             strokeWidth="3"
             mode="indeterminate"
           ></mat-spinner>
-        </ng-template>
-      </div>
-    </div>
-  </div>
-</app-box>
+        </ng-template> -->
