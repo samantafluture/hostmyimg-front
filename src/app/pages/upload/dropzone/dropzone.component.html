@@ -1,8 +1,13 @@
 <app-box>
-  <ngx-dropzone (change)="onSelect($event)" class="dropzone">
+  <ngx-dropzone
+    accept="image/*"
+    (change)="onSelect($event)"
+    class="dropzone"
+    [maxFileSize]="2000000"
+  >
     <ngx-dropzone-label>
-      <p>Drop your images here or...</p>
-      <app-browse-input></app-browse-input>
+      <h4><u>Click</u> or Drop your images here</h4>
+      <app-message message="Accepted files: png, jpeg, jpg, gif"></app-message>
     </ngx-dropzone-label>
   </ngx-dropzone>
   <div class="container" *ngFor="let f of files">
@@ -15,17 +20,30 @@
             <strong>{{ f.name | slice: 0:20 }}</strong>
             <span class="file-size">
               {{ f.size | filesize }}
-              <!-- {{ f.type }} -->
               <button class="btn-delete" (click)="onRemove(f)">Remove</button>
             </span>
           </div>
         </div>
       </ngx-dropzone-label>
     </div>
-    <div class="status" >
-      <app-file-status
-        [progress] =  "uploadProgress"
-      ></app-file-status>
+    <div class="status">
+      <div class="file-status">
+        <a [href]="url"><mat-icon>link</mat-icon></a>
+        <div class="file-status__icons" *ngIf="uploadProgress; else error || loading">
+          <mat-icon class="icon-success">check_circle</mat-icon>
+        </div>
+        <ng-template #error>
+          <mat-icon class="icon-error">error</mat-icon>
+        </ng-template>
+        <ng-template #loading>
+          <mat-spinner
+            diameter="24"
+            [value]="uploadProgress"
+            strokeWidth="3"
+            mode="indeterminate"
+          ></mat-spinner>
+        </ng-template>
+      </div>
     </div>
   </div>
 </app-box>

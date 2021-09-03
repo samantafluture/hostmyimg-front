@@ -28,5 +28,4 @@ export class FileStatusComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  
 }

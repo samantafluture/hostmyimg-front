@@ -1,3 +1,4 @@
+import { IconModule } from './../components/icon/icon.module';
 import { MessageModule } from './../components/message/message.module';
 import { BoxModule } from '../components/box/box.module';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,7 @@ const materialModules = [MatIconModule, MatProgressSpinnerModule];
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, ...materialModules, BoxModule, MessageModule],
-  exports: [...materialModules, BoxModule, MessageModule],
+  imports: [CommonModule, ...materialModules, BoxModule, MessageModule, IconModule],
+  exports: [...materialModules, BoxModule, MessageModule, IconModule],
 })
 export class SharedModule {}

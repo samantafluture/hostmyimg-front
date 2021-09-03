@@ -11,6 +11,8 @@ export class DropzoneComponent implements OnInit {
   files: File[] = [];
   file!: File;
   uploadProgress = 0;
+  url: string = 'http://google.com';
+  failed: boolean = false;
 
   constructor(private uploadService: UploadService) {}
 
@@ -18,9 +20,14 @@ export class DropzoneComponent implements OnInit {
 
   onSelect(event: any) {
     console.log('## event ## ', event);
-    this.files.push(...event.addedFiles);
-    console.log('## array ## ', ...event.addedFiles);
-    this.upload();
+    if (this.files.push(...event.addedFiles)) {
+      console.log('## array ## ', ...event.addedFiles);
+      this.upload();
+    } else {
+      console.log('## array ## ', ...event.rejectedFiles);
+      this.files.push(...event.rejectedFiles);
+      this.failed = true;
+    }
   }
 
   onRemove(event: any) {
@@ -39,7 +46,9 @@ export class DropzoneComponent implements OnInit {
               console.log('## uploadProgress ## ', this.uploadProgress);
             }
           },
-          (error) => console.log(error)
+          (error) => {
+            console.log(error), (this.failed = true);
+          }
         );
         console.log(`## file upload with success ##`);
       }

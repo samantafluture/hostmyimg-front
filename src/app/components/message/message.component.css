@@ -1,9 +1,10 @@
 .message {
-  color: #999;
+  color: #bbb;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  font-size: 14px;
+  padding-top: 5px;
 }
 
 .message--success {
