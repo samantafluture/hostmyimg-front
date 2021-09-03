@@ -16,6 +16,7 @@
 3. Refatorar
 - [ ] dividir componentes
 - [ ] melhorar código de estilo
+- [ ] favicon
 
 4. Deploy
 - [ ] subir a api sem token no ar

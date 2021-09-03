@@ -56,7 +56,7 @@
             <mat-icon>link</mat-icon>
           </a>
 
-          <div class="file-status__icons" *ngIf="uploadProgress">
+          <div class="file-status__icons" *ngIf="!isUploadFailed && !isServerError">
             <mat-icon class="icon-success">check_circle</mat-icon>
           </div>
 
@@ -72,6 +72,7 @@
               mode="indeterminate"
             ></mat-spinner>
           </div>
+
         </div>
       </div>
     </div>
