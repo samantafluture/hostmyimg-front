@@ -11,7 +11,7 @@ export class DropzoneComponent implements OnInit {
   files: File[] = [];
   file!: File;
   uploadProgress = 0;
-  url: string = 'http://google.com';
+  url: string = '';
   failed: boolean = false;
 
   constructor(private uploadService: UploadService) {}
@@ -19,19 +19,16 @@ export class DropzoneComponent implements OnInit {
   ngOnInit(): void {}
 
   onSelect(event: any) {
-    console.log('## event ## ', event);
     if (this.files.push(...event.addedFiles)) {
-      console.log('## array ## ', ...event.addedFiles);
+      console.log('## addedFiles ## ', ...event.addedFiles);
       this.upload();
     } else {
-      console.log('## array ## ', ...event.rejectedFiles);
+      console.log('## rejectedFiles ## ', ...event.rejectedFiles);
       this.files.push(...event.rejectedFiles);
-      this.failed = true;
     }
   }
 
   onRemove(event: any) {
-    console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
 
@@ -50,22 +47,7 @@ export class DropzoneComponent implements OnInit {
             console.log(error), (this.failed = true);
           }
         );
-        console.log(`## file upload with success ##`);
       }
     }
   }
-
-  //   this.file = this.files[0];
-  //   this.uploadService.uploadFile(this.file).subscribe(
-  //     (event: HttpEvent<any>) => {
-  //       if (event.type === HttpEventType.UploadProgress) {
-  //         const total = event.total ?? 1;
-  //         this.uploadProgress = Math.round(100 * (event.loaded / total));
-  //         console.log('## uploadProgress ## ', this.uploadProgress);
-  //       }
-  //     },
-  //     (error) => console.log(error)
-  //   );
-  //   console.log(`## file '${this.file.name}' upload with success ##`);
-  // }
 }
