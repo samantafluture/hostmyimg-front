@@ -10,8 +10,8 @@
 - [x] tipo de arquivo
 - [x] não deixar clicar no link se der erro
 - [x] alerta para mais de 5 arquivos ao mesmo tempo
-- [ ] deixar roxinho quando file over
-- [ ] barra de progresso circular -> quando for erro de conexão
+- [x] deixar roxinho quando file over
+- [x] barra de progresso circular -> quando for erro de conexão
 
 3. Refatorar
 - [ ] dividir componentes

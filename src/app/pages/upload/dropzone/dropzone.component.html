@@ -8,13 +8,18 @@
     <ngx-dropzone-label>
       <p>Click or drag and drop images here</p>
       <app-message
-        *ngIf="failed"
+        *ngIf="isUploadFailed"
         msg_1="Supported file types: PNG, JPG, GIF"
         msg_2="Maximum file size: 2 MB"
       ></app-message>
       <app-message
-      *ngIf="isFileLimit"
-       msg_1="Please, upload no more then 5 images at time!"
+        *ngIf="isFileLimit"
+        msg_1="Please, upload no more then 5 images at time!"
+      ></app-message>
+      <app-message
+        *ngIf="isServerError"
+        msg_1="Ops, something is wrong with our servers..."
+        msg_2="Please try again later!"
       ></app-message>
     </ngx-dropzone-label>
   </ngx-dropzone>
@@ -43,33 +48,32 @@
 
       <div class="status">
         <div class="file-status">
-          <a href="{{ imageUrl }}/{{ f.name }}" target="_blank" *ngIf="!failed">
+          <a
+            href="{{ imageUrl }}/{{ f.name }}"
+            target="_blank"
+            *ngIf="!isUploadFailed && !isServerError"
+          >
             <mat-icon>link</mat-icon>
           </a>
 
-          <div class="file-status__icons" *ngIf="uploadProgress; else error">
+          <div class="file-status__icons" *ngIf="uploadProgress">
             <mat-icon class="icon-success">check_circle</mat-icon>
           </div>
 
-          <ng-template #error>
+          <div class="file-status__icons" *ngIf="isUploadFailed">
             <mat-icon class="icon-error">error</mat-icon>
-          </ng-template>
+          </div>
+
+          <div class="file-status__icons" *ngIf="isServerError">
+            <mat-spinner
+              diameter="24"
+              [value]="uploadProgress"
+              strokeWidth="3"
+              mode="indeterminate"
+            ></mat-spinner>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
 </app-box>
-
-
-
-
-
-<!-- <ng-template #loading>
-          <mat-spinner
-            diameter="24"
-            [value]="uploadProgress"
-            strokeWidth="3"
-            mode="indeterminate"
-          ></mat-spinner>
-        </ng-template> -->

@@ -13,8 +13,9 @@ const url = environment.bucketUrl;
 export class DropzoneComponent implements OnInit {
   files: File[] = [];
   file!: File;
-  failed!: boolean;
+  isUploadFailed!: boolean;
   isFileLimit!: boolean;
+  isServerError!: boolean;
   uploadProgress = 0;
   imageUrl = url;
 
@@ -24,20 +25,16 @@ export class DropzoneComponent implements OnInit {
 
   onSelect(event: any) {
     if (this.files.push(...event.addedFiles)) {
-      this.files.length < 6 ? this.upload() : this.isFileLimit = true;
+      this.files.length < 6 ? this.upload() : (this.isFileLimit = true);
     } else {
       this.files.push(...event.rejectedFiles);
-      this.failed = true;
+      this.isUploadFailed = true;
     }
   }
 
   onRemove(event: any) {
     this.files.splice(this.files.indexOf(event), 1);
   }
-
-  // _onDragOver(event : any) {
-
-  // }
 
   upload() {
     if (this.files) {
@@ -50,7 +47,8 @@ export class DropzoneComponent implements OnInit {
             }
           },
           (error) => {
-            console.log(error);
+            console.log(error),
+              (this.isServerError = true);
           }
         );
       }
