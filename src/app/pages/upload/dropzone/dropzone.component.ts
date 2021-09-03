@@ -35,6 +35,10 @@ export class DropzoneComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
+  // _onDragOver(event : any) {
+
+  // }
+
   upload() {
     if (this.files) {
       for (let i = 0; i < this.files.length; i++) {

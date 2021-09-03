@@ -1,6 +1,6 @@
 .dropzone {
   border: 1px dashed #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   transition: height 0.2s ease;
   padding: 20px;
@@ -8,13 +8,18 @@
   color: #999;
 }
 
-.dropzone--accept {
+.dropzone:hover {
   border-color: #78e5d5;
+  color: #78e5d5;
 }
 
-.dropzone--reject {
-  border-color: #e57878;
+.ngx-dz-hovered {
+  border: 1px dashed #78e5d5 !important;
+  color: #78e5d5 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
+
+
 
 .file-info__wrapper {
   display: flex;
