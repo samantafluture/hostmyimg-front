@@ -22,8 +22,8 @@
 
 1. Serviço de upload / api
 - [x] gravar na api o arquivo
-- [ ] usar infos do progresso na barra de progresso
-- [ ] pegar o link salvo cdn e mostrar
+- [x] usar infos do progresso na barra de progresso
+- [x] pegar o link salvo cdn e mostrar
 
 2. Validações visuais
 - [ ] tamanho de arquivo

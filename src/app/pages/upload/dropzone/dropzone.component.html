@@ -28,8 +28,13 @@
     </div>
     <div class="status">
       <div class="file-status">
-        <a [href]="url"><mat-icon>link</mat-icon></a>
-        <div class="file-status__icons" *ngIf="uploadProgress; else error || loading">
+        <a href="{{ imageUrl }}/{{ f.name }}" target="_blank"
+          ><mat-icon>link</mat-icon></a
+        >
+        <div
+          class="file-status__icons"
+          *ngIf="uploadProgress; else error || loading"
+        >
           <mat-icon class="icon-success">check_circle</mat-icon>
         </div>
         <ng-template #error>

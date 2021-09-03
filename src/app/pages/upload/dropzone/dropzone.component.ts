@@ -1,6 +1,9 @@
+import { environment } from 'src/environments/environment';
 import { UploadService } from '../../../services/upload.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
+
+const url = environment.bucketUrl;
 
 @Component({
   selector: 'app-dropzone',
@@ -11,8 +14,8 @@ export class DropzoneComponent implements OnInit {
   files: File[] = [];
   file!: File;
   uploadProgress = 0;
-  url: string = '';
   failed: boolean = false;
+  imageUrl = url;
 
   constructor(private uploadService: UploadService) {}
 
@@ -50,4 +53,5 @@ export class DropzoneComponent implements OnInit {
       }
     }
   }
+
 }
