@@ -20,8 +20,6 @@
   font-family: var(--primary-font) !important;
 }
 
-/* file info */
-
 .btn-delete {
   border: 0;
   background: transparent;
@@ -29,12 +27,4 @@
   margin-left: 0.313rem;
   cursor: pointer;
 }
-
-/* file status and link */
-
-a {
-  color: var(--almost-black);
-  margin-right: 0.625rem;
-}
-
 

@@ -1,4 +1,4 @@
-<app-box title="Image Uploader">
+<app-box title="Host My Image">
   <ngx-dropzone
     accept="image/jpeg,image/jpg,image/png,image/gif"
     (change)="onSelect($event)"
@@ -23,7 +23,6 @@
       ></app-message>
     </ngx-dropzone-label>
   </ngx-dropzone>
-
   <section *ngIf="!isFileLimit">
     <app-wrapper *ngFor="let f of files">
       <app-wrapper>
@@ -41,31 +40,26 @@
           </app-files>
         </ngx-dropzone-label>
       </app-wrapper>
-
       <app-wrapper>
-        <div class="file-status">
-          <a
-            href="{{ imageUrl }}/{{ f.name }}"
-            target="_blank"
-            *ngIf="!isUploadFailed && !isServerError"
-          >
-            <mat-icon>link</mat-icon>
-          </a>
-          <app-status
-            *ngIf="!isUploadFailed && !isServerError"
-            statusClass="success"
-            statusIcon="check_circle"
-          >
-          </app-status>
-          <app-status
-            *ngIf="isUploadFailed"
-            statusClass="error"
-            statusIcon="error"
-          >
-          </app-status>
-          <app-loading *ngIf="isServerError" [progress]="uploadProgress">
-          </app-loading>
-        </div>
+        <app-link
+          *ngIf="!isUploadFailed && !isServerError"
+          url="{{ imageUrl }}/{{ f.name }}"
+          icon="link"
+        ></app-link>
+        <app-status
+          *ngIf="!isUploadFailed && !isServerError"
+          statusClass="success"
+          statusIcon="check_circle"
+        >
+        </app-status>
+        <app-status
+          *ngIf="isUploadFailed"
+          statusClass="error"
+          statusIcon="error"
+        >
+        </app-status>
+        <app-loading *ngIf="isServerError" [progress]="uploadProgress">
+        </app-loading>
       </app-wrapper>
     </app-wrapper>
   </section>

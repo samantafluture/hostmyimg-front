@@ -14,11 +14,12 @@
 - [x] barra de progresso circular -> quando for erro de conexão
 
 3. Refatorar
-- [ ] dividir componentes
-- [ ] melhorar código de estilo
-- [ ] favicon
+- [x] dividir componentes
+- [x] melhorar código de estilo
+- [x] favicon
 
 4. Deploy
+- [ ] github bonitinho
 - [ ] subir a api sem token no ar
 - [ ] subir o front 
 

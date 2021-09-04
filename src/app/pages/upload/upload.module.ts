@@ -8,9 +8,10 @@ import { NgxFilesizeModule } from 'ngx-filesize';
 import { FilesComponent } from './files/files.component';
 import { StatusComponent } from './status/status.component';
 import { LoadingComponent } from './loading/loading.component';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
-  declarations: [DropzoneComponent, FilesComponent, StatusComponent, LoadingComponent],
+  declarations: [DropzoneComponent, FilesComponent, StatusComponent, LoadingComponent, LinkComponent],
   imports: [CommonModule, NgxDropzoneModule, NgxFilesizeModule, SharedModule],
   exports: [DropzoneComponent],
 })

@@ -1,7 +1,6 @@
 .file-info__wrapper {
   display: flex;
   align-items: center;
-
 }
 
 .file-info__content {
@@ -16,10 +15,3 @@
   margin-top: 0.313rem;
 }
 
-.btn-delete {
-  border: 0;
-  background: transparent;
-  color: var(--alert-red);
-  margin-left: 0.313rem;
-  cursor: pointer;
-}
