@@ -26,7 +26,6 @@
 
   <section *ngIf="!isFileLimit">
     <app-wrapper *ngFor="let f of files">
-
       <app-wrapper>
         <ngx-dropzone-image-preview
           ngProjectAs="ngx-dropzone-preview"
@@ -35,8 +34,8 @@
         </ngx-dropzone-image-preview>
         <ngx-dropzone-label>
           <app-files
-          fileName="{{ f.name | slice: 0:20 }}"
-          fileSize="{{ f.size | filesize }}"
+            fileName="{{ f.name | slice: 0:20 }}"
+            fileSize="{{ f.size | filesize }}"
           >
             <button class="btn-delete" (click)="onRemove(f)">Remove</button>
           </app-files>
@@ -53,31 +52,21 @@
             <mat-icon>link</mat-icon>
           </a>
           <app-status
-          *ngIf="!isUploadFailed && !isServerError"
-          statusClass="success"
-          statusIcon="check_circle"
+            *ngIf="!isUploadFailed && !isServerError"
+            statusClass="success"
+            statusIcon="check_circle"
           >
           </app-status>
-
-          <!-- <div
-            class="file-status__icons" *ngIf="!isUploadFailed && !isServerError"
+          <app-status
+            *ngIf="isUploadFailed"
+            statusClass="error"
+            statusIcon="error"
           >
-            <mat-icon class="icon-success">check_circle</mat-icon>
-          </div> -->
-          <div class="file-status__icons" *ngIf="isUploadFailed">
-            <mat-icon class="icon-error">error</mat-icon>
-          </div>
-          <div class="file-status__icons" *ngIf="isServerError">
-            <mat-spinner
-              diameter="24"
-              [value]="uploadProgress"
-              strokeWidth="3"
-              mode="indeterminate"
-            ></mat-spinner>
-          </div>
+          </app-status>
+          <app-loading *ngIf="isServerError" [progress]="uploadProgress">
+          </app-loading>
         </div>
       </app-wrapper>
-
     </app-wrapper>
   </section>
 </app-box>
