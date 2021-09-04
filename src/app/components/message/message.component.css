@@ -1,5 +1,5 @@
 .message {
-  font-size: 13px;
-  padding-top: 12px;
-  color: #e57878;
+  font-size: 0.813rem;
+  padding-top: 0.75rem;
+  color: var(--alert-red);
 }

@@ -1,6 +1,6 @@
 h1 {
-  padding-bottom: 20px;
-  color: #999;
+  padding-bottom: 1.25rem;
+  color: var(--dark-grey);
 }
 
 .box__wrapper {
@@ -12,9 +12,9 @@ h1 {
 
 .box__content {
   width: 100%;
-  max-width: 400px;
-  margin: 30px;
-  background: #fff;
+  max-width: 25rem;
+  margin: 1.875rem;
+  background: var(--white);
   border-radius: 4px;
-  padding: 20px;
+  padding: 1.25rem;
 }

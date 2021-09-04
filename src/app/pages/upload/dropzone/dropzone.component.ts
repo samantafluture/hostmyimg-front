@@ -47,8 +47,7 @@ export class DropzoneComponent implements OnInit {
             }
           },
           (error) => {
-            console.log(error),
-              (this.isServerError = true);
+            console.log(error), (this.isServerError = true);
           }
         );
       }

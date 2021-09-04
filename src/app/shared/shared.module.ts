@@ -1,3 +1,4 @@
+import { WrapperModule } from './../components/wrapper/wrapper.module';
 import { MessageModule } from '../components/message/message.module';
 import { BoxModule } from '../components/box/box.module';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,13 @@ const materialModules = [MatIconModule, MatProgressSpinnerModule];
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, ...materialModules, BoxModule, MessageModule],
-  exports: [...materialModules, BoxModule, MessageModule],
+  imports: [
+    CommonModule,
+    ...materialModules,
+    BoxModule,
+    MessageModule,
+    WrapperModule,
+  ],
+  exports: [...materialModules, BoxModule, MessageModule, WrapperModule],
 })
 export class SharedModule {}

@@ -25,28 +25,25 @@
   </ngx-dropzone>
 
   <section *ngIf="!isFileLimit">
-    <div class="container" *ngFor="let f of files">
-      <div class="container">
+    <app-wrapper *ngFor="let f of files">
+
+      <app-wrapper>
         <ngx-dropzone-image-preview
           ngProjectAs="ngx-dropzone-preview"
           [file]="f"
         >
         </ngx-dropzone-image-preview>
-
         <ngx-dropzone-label>
-          <div class="file-info__wrapper">
-            <div class="file-info__content">
-              <strong>{{ f.name | slice: 0:20 }}</strong>
-              <span class="file-size">
-                {{ f.size | filesize }}
-                <button class="btn-delete" (click)="onRemove(f)">Remove</button>
-              </span>
-            </div>
-          </div>
+          <app-files
+          fileName="{{ f.name | slice: 0:20 }}"
+          fileSize="{{ f.size | filesize }}"
+          >
+            <button class="btn-delete" (click)="onRemove(f)">Remove</button>
+          </app-files>
         </ngx-dropzone-label>
-      </div>
+      </app-wrapper>
 
-      <div class="status">
+      <app-wrapper>
         <div class="file-status">
           <a
             href="{{ imageUrl }}/{{ f.name }}"
@@ -55,15 +52,21 @@
           >
             <mat-icon>link</mat-icon>
           </a>
+          <app-status
+          *ngIf="!isUploadFailed && !isServerError"
+          statusClass="success"
+          statusIcon="check_circle"
+          >
+          </app-status>
 
-          <div class="file-status__icons" *ngIf="!isUploadFailed && !isServerError">
+          <!-- <div
+            class="file-status__icons" *ngIf="!isUploadFailed && !isServerError"
+          >
             <mat-icon class="icon-success">check_circle</mat-icon>
-          </div>
-
+          </div> -->
           <div class="file-status__icons" *ngIf="isUploadFailed">
             <mat-icon class="icon-error">error</mat-icon>
           </div>
-
           <div class="file-status__icons" *ngIf="isServerError">
             <mat-spinner
               diameter="24"
@@ -72,9 +75,9 @@
               mode="indeterminate"
             ></mat-spinner>
           </div>
-
         </div>
-      </div>
-    </div>
+      </app-wrapper>
+
+    </app-wrapper>
   </section>
 </app-box>
