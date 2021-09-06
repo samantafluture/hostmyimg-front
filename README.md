@@ -38,11 +38,11 @@ Deploy: Vercel.
 
 Returning the thumbnail, an "ok" and the link for the hosted imagen in the CDN.
 
-![upload-image-ok]()
+![upload-image-ok](https://github.com/samantafluture/hostmyimg-front/blob/main/src/assets/upload-image-ok.png?raw=true)
 
 Returning an error when trying to upload a file format that is not accepted.
 
-![upload-image-error]()
+![upload-image-error](https://github.com/samantafluture/hostmyimg-front/blob/main/src/assets/upload-image-error.png?raw=true)
 
 ## Under Construction
 
