@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://hostmyimg-server.herokuapp.com',
   bucketUrl: 'https://hostmyimg.s3.amazonaws.com'
 };

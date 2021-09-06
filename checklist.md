@@ -23,5 +23,3 @@
 - [ ] subir a api sem token no ar
 - [ ] subir o front 
 
-5. Refazer com https://ackerapple.github.io/angular-file/ 
-
