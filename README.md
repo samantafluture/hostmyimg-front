@@ -34,6 +34,16 @@ CND for hosting images online: Amazon AWS S3.
 
 Deploy: Vercel.
 
+## Screens
+
+Returning the thumbnail, an "ok" and the link for the hosted imagen in the CDN.
+
+![upload-image-ok]()
+
+Returning an error when trying to upload a file format that is not accepted.
+
+![upload-image-error]()
+
 ## Under Construction
 
 Please feel free to contribute! This web app is still under development :coffee:
