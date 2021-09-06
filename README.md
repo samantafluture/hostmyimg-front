@@ -1,28 +1,39 @@
-# HostmyimgFront
+# Host My Img (Front-End)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+A basic and simple web app for hosting images (.png, .jpg, .gif) online. 
 
-## Development server
+Built with Angular and Angular CLI.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This front-end uses the following API: [Host My Img Web Server](https://github.com/samantafluture/hostmyimg-server). 
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Upload by clicking or drag and dropping
+  - Add one or multiple files
+  - Formats: png, jpg and gif
+  - Maximum size: 2M per file
+- Show upload progress to the user
+- Retrieve a URL from each file
+  - Frow Amazon S3 Bucket
+- Remove it from the upload queue
+- Return visual errors if:
+  - Web Server is down
+  - File is too big
+  - There's too many files selected at once (more than 5)
+  - File formats not accepted
 
-## Build
+## Built with
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular
+- Angular CLI
+- Ngx-Dropzone
+- Material Icons
+- Material Circular Progress Bar
 
-## Running unit tests
+CND for hosting images online: Amazon AWS S3.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Deploy: Vercel.
 
-## Running end-to-end tests
+## Under Construction
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# hostmyimg-front
+Please feel free to contribute! This web app is still under development :coffee:
