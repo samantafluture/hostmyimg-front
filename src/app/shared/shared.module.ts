@@ -1,3 +1,4 @@
+import { FooterModule } from './footer/footer.module';
 import { WrapperModule } from './../components/wrapper/wrapper.module';
 import { MessageModule } from '../components/message/message.module';
 import { BoxModule } from '../components/box/box.module';
@@ -16,7 +17,14 @@ const materialModules = [MatIconModule, MatProgressSpinnerModule];
     BoxModule,
     MessageModule,
     WrapperModule,
+    FooterModule,
   ],
-  exports: [...materialModules, BoxModule, MessageModule, WrapperModule],
+  exports: [
+    ...materialModules,
+    BoxModule,
+    MessageModule,
+    WrapperModule,
+    FooterModule,
+  ],
 })
 export class SharedModule {}

@@ -19,7 +19,8 @@
 - [x] favicon
 
 4. Deploy
-- [ ] github bonitinho
-- [ ] subir a api sem token no ar
-- [ ] subir o front 
+- [x] github bonitinho
+- [x] subir a api sem token no ar
+- [x] subir o front 
+- [ ] rodapé assinatura
 

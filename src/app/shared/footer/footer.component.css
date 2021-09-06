@@ -1,0 +1,21 @@
+.footer {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.footer__text {
+  font-family: var(--primary-font);
+  color: var(--white);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--alert-green);
+}
